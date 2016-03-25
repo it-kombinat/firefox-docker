@@ -17,8 +17,7 @@ The idea is pretty simple and you can easily it give a try by running a Firefox 
 	USER user
 	CMD /usr/bin/firefox
 * Build Docker
-
-	docker build -t firefox .
+docker build -t firefox .
 
 * Adding X11 Host
 
