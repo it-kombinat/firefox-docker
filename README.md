@@ -17,10 +17,15 @@ The idea is pretty simple and you can easily it give a try by running a Firefox 
 	USER user
 	CMD /usr/bin/firefox
 * Build Docker
+
 	docker build -t firefox .
+
 * Adding X11 Host
+
 	xhost +local:
+
 * Running Docker Container
+
 	sudo docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix firefox
 
 If all goes well you should see Firefox running from within a Docker container.
