@@ -5,7 +5,7 @@ There are a few different options to run GUI applications inside a Docker contai
 The idea is pretty simple and you can easily it give a try by running a Firefox container using the following Dockerfile as a starting point:
 
 * Dockerfile (Fedora23)
-	
+```	
 	FROM fedora:23
 
 	RUN dnf update -y && \
@@ -16,15 +16,17 @@ The idea is pretty simple and you can easily it give a try by running a Firefox 
 
 	USER user
 	CMD /usr/bin/firefox
+```
 * Build Docker
+```
 docker build -t firefox .
-
+```
 * Adding X11 Host
-
-	xhost +local:
-
+```
+xhost +local:
+```
 * Running Docker Container
-
-	sudo docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix firefox
-
+```
+sudo docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix firefox
+```
 If all goes well you should see Firefox running from within a Docker container.
